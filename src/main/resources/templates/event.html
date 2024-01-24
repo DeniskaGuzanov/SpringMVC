@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Party Events</title>
+</head>
+<body>
+    <div><h1>Welcome People</h1></div>
+    <div>
+       <h2>Выберите услуги</h2>
+    </div>
+
+<table>
+    <div><tr><th>Заказ артистов</th></div>
+        <th>Заказать Координатора</th></tr>
+    <tr th:each="e: ${events}"></tr>
+    <td th:text="${service}"></td>
+    <td th:text="${price}"></td>
+</table>
+
+    <div><h2>add a service</h2></div>
+    <form action="event" method="post">
+        SERVICE: <input type="text" name="service"><br />
+        PRICE: <input type="number" step="any" name="price"><br />
+        <button type="submit">Добавить услугу</button>
+    </form>
+
+</body>
+</html>
